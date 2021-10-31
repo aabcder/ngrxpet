@@ -1,1 +1,4 @@
-{{user | async | json}}
+<h3>Hello, {{user?.name}}</h3>
+<p>Your system id: {{user?.id}}</p>
+<a>Go to users list</a>
+<button (click)="logout()"> logout </button>

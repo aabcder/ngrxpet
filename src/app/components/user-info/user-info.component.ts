@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable, of } from 'rxjs';
 import { AppState } from 'src/app/appState/appState';
 import { userSelector } from 'src/app/store/selectors/user.selectors';
+import { User } from 'src/app/models/user';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-user-info',
@@ -10,8 +11,17 @@ import { userSelector } from 'src/app/store/selectors/user.selectors';
   styleUrls: ['./user-info.component.scss'],
 })
 export class UserInfoComponent {
-  user: Observable<any> = of(null);
+  user: User;
   constructor(private store: Store<AppState>) {
-    this.user = store.select(userSelector);
+    store
+      .select(userSelector)
+      .pipe(
+        tap((user) => {
+          this.user = user;
+        })
+      )
+      .subscribe();
   }
+
+  logout() {}
 }
