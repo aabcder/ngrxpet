@@ -1,1 +1,5 @@
-<p>sidebar works!</p>
+<ng-container *ngIf="isShown | async">
+  <aside>
+    <ng-content></ng-content>
+  </aside>
+</ng-container>

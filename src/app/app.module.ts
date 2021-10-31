@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { ApiService } from './services/api.service';
 import { userReducer } from './store/reducers/user.reducer';
+import { toggleSidebarReducer } from './store/reducers/sidebar.reducer';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { userReducer } from './store/reducers/user.reducer';
     HttpClientModule,
     StoreModule.forRoot({
       user: userReducer,
+      sidebarOpenState: toggleSidebarReducer,
     }),
   ],
   providers: [ApiService],
