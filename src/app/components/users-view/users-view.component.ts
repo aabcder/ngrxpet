@@ -29,7 +29,6 @@ export class UsersViewComponent {
   }
 
   getColorByPriority(priority: number): string {
-    // if (priority === 0) return '';
     if (priority < -20) return 'p-3';
     if (priority < -10) return 'p-2';
     if (priority < -3) return 'p-1';
