@@ -10,8 +10,8 @@ import { CompanyInfoComponent } from './components/company-info/company-info.com
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
-import { getState } from './appState/appState';
 import { ApiService } from './services/api.service';
+import { userReducer } from './store/reducers/user.reducer';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,9 @@ import { ApiService } from './services/api.service';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    StoreModule.forRoot(getState()),
+    StoreModule.forRoot({
+      user: userReducer,
+    }),
   ],
   providers: [ApiService],
   bootstrap: [AppComponent],
