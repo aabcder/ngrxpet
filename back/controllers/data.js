@@ -8,6 +8,7 @@ const users = Array.from({ length: 10 }).map((value, index) => {
     info: faker.company.catchPhrase(),
     phone: faker.phone.phoneNumber(),
     avatar: faker.image.avatar(),
+    priority: 0,
   };
 });
 

@@ -5,4 +5,5 @@ export interface User {
   info: string;
   phone: string;
   avatar: string;
+  priority: number;
 }
