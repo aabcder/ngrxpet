@@ -6,10 +6,12 @@
   <table>
     <thead></thead>
     <tbody>
-      <tr *ngFor="let user of users">
+      <tr *ngFor="let user of users" class="{{getColorByPriority(user.priority)}}">
         <ng-container *ngFor="let field of user | keyvalue ; let i = index">
           <td *ngIf="i > 0"> {{field?.value}} </td>
         </ng-container>
+        <button (click)="changePriority(user,1)">+</button><button
+          (click)="changePriority(user,-1)">-</button>
       </tr>
     </tbody>
   </table>
