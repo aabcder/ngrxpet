@@ -1,4 +1,5 @@
 const user = require("./controllers/user");
+const users = require("./controllers/data");
 
 const express = require("express");
 
@@ -11,6 +12,10 @@ app.listen(BACKEND_PORT, () =>
 
 app.get("/api/user", (req, res) => {
   res.send(user);
+});
+
+app.get("/api/users", (req, res) => {
+  res.send(users);
 });
 
 app.get("/api/user-settings", (req, res) => {
