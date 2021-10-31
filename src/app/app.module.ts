@@ -13,6 +13,7 @@ import { StoreModule } from '@ngrx/store';
 import { ApiService } from './services/api.service';
 import { userReducer } from './store/reducers/user.reducer';
 import { toggleSidebarReducer } from './store/reducers/sidebar.reducer';
+import { usersListReducer } from './store/reducers/usersList.reducer';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { toggleSidebarReducer } from './store/reducers/sidebar.reducer';
     StoreModule.forRoot({
       user: userReducer,
       sidebarOpenState: toggleSidebarReducer,
+      users: usersListReducer,
     }),
   ],
   providers: [ApiService],
