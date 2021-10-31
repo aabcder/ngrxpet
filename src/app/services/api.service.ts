@@ -5,6 +5,7 @@ import { first, tap } from 'rxjs/operators';
 import { setUser } from '../store/actions/user.actions';
 import { User } from '../models/user';
 import { AppState } from 'src/app/appState/appState';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -19,5 +20,9 @@ export class ApiService {
       .subscribe((user: User) => {
         this.store.dispatch(setUser({ user }));
       });
+  }
+
+  getUsers(): Observable<User[]> {
+    return this.http.get('/api/users').pipe(first(), tap(console.warn));
   }
 }
