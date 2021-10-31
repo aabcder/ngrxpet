@@ -1,12 +1,6 @@
-import { ActionReducer, ActionReducerMap } from '@ngrx/store';
-import { userReducer } from '../reducers/user.reducer';
+import { User } from '../models/user';
 
-interface AppState {
-  user: ActionReducer<any>;
+export interface AppState {
+  user: User;
 }
 
-export function getState(): ActionReducerMap<AppState> {
-  return {
-    user: userReducer,
-  };
-}
