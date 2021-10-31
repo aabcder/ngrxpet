@@ -6,7 +6,7 @@ let user$: User = null as any
 
 export const userReducer = createReducer(
   user$,
-  on(setUser, ( state: any, userAction: any ) => {
+  on(setUser, ( state: User, userAction: { user: User } ) => {
     return userAction?.user;
   }),
   on(clearUser, () => null as any)
