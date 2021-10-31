@@ -14,6 +14,7 @@ import { ApiService } from './services/api.service';
 import { userReducer } from './store/reducers/user.reducer';
 import { toggleSidebarReducer } from './store/reducers/sidebar.reducer';
 import { usersListReducer } from './store/reducers/usersList.reducer';
+import { UsersResolver } from './resolvers/users.resolver';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { usersListReducer } from './store/reducers/usersList.reducer';
       users: usersListReducer,
     }),
   ],
-  providers: [ApiService],
+  providers: [ApiService, UsersResolver],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
