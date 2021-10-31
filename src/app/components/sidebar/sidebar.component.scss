@@ -1,0 +1,14 @@
+@import "../../styles/sizes.scss";
+
+aside {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 10px;
+  border-left: 1px solid goldenrod;
+  right: 0;
+  width: $app-sidebar-width;
+  height: calc(100vh - 80px);
+}

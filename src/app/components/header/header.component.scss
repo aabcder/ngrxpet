@@ -1,0 +1,30 @@
+@import "../../styles/sizes.scss";
+
+.container {
+  height: $app-header-height;
+  display: flex;
+  padding: 10px;
+  box-sizing: border-box;
+  align-items: center;
+  flex-direction: row;
+  background-color: antiquewhite;
+  & .basic-items {
+    margin-left: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    &__open-user-sidebar {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      overflow: hidden;
+      cursor: pointer;
+      & > img {
+        align-self: center;
+        width: 150%;
+      }
+    }
+  }
+}
