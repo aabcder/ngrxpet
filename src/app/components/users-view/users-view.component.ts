@@ -13,6 +13,7 @@ import { changeUserPriority } from 'src/app/store/actions/usersList.action';
 })
 export class UsersViewComponent {
   users: User[] = [];
+
   constructor(private store: Store<AppState>) {
     store
       .select(usersSelector)

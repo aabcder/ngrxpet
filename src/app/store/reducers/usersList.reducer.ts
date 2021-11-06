@@ -6,9 +6,7 @@ const initial: User[] = [];
 
 export const usersListReducer = createReducer(
   initial,
-  on(setUsersList, (state: User[], users: { users: User[] }) => {
-    return users?.users;
-  }),
+  on(setUsersList, (state: User[], users: { users: User[] }) => users?.users),
   on(changeUserPriority, (state, action: { user: User; delta: number }) => {
     return state
       .map((current) => {

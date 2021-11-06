@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { AppState } from 'src/app/appState/appState';
 import { User } from 'src/app/models/user';
-import {toggleSidebar} from 'src/app/store/actions/sidebar.actions';
+import { toggleSidebar } from 'src/app/store/actions/sidebar.actions';
 import { userSelector } from 'src/app/store/selectors/user.selectors';
 
 @Component({
@@ -18,6 +18,6 @@ export class HeaderComponent {
   }
 
   toggleSidebar(): void {
-    this.store.dispatch(toggleSidebar())
+    this.store.dispatch(toggleSidebar());
   }
 }
