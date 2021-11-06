@@ -15,6 +15,10 @@ import { userReducer } from './store/reducers/user.reducer';
 import { toggleSidebarReducer } from './store/reducers/sidebar.reducer';
 import { usersListReducer } from './store/reducers/usersList.reducer';
 import { UsersResolver } from './resolvers/users.resolver';
+import { EffectsModule } from '@ngrx/effects';
+import { UserEffects } from './store/effects/user.effect';
+import { UsersListEffects } from './store/effects/usersList.effect';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [
@@ -35,6 +39,11 @@ import { UsersResolver } from './resolvers/users.resolver';
       sidebarOpenState: toggleSidebarReducer,
       users: usersListReducer,
     }),
+    StoreDevtoolsModule.instrument({
+      maxAge: 10,
+      autoPause: true,
+    }),
+    EffectsModule.forRoot([UserEffects, UsersListEffects]),
   ],
   providers: [ApiService, UsersResolver],
   bootstrap: [AppComponent],
