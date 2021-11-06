@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ApiService } from './services/api.service';
+import { Store } from '@ngrx/store';
+import { getUser } from './store/actions/user.actions';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,7 @@ import { ApiService } from './services/api.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  constructor(private api: ApiService) {
-    api.getUserData();
+  constructor(private store: Store) {
+    store.dispatch(getUser());
   }
 }
