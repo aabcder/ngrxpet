@@ -8,5 +8,7 @@ export const setUsersList = createAction(
 
 export const changeUserPriority = createAction(
   '[Users list] - change priority',
-  props<{ user: User, delta: number }>()
-)
+  props<{ user: User; delta: number }>()
+);
+
+export const getUsersList = createAction('[Users list] - get');

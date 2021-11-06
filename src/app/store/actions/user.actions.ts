@@ -3,3 +3,4 @@ import { User } from '../../models/user';
 
 export const setUser = createAction('[User] set', props<{ user: User }>());
 export const clearUser = createAction('[User] clear');
+export const getUser = createAction('[User] get')
